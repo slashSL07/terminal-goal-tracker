@@ -61,6 +61,8 @@ do you want to (1)check, (2) add, (3) modify: 1
 goal Exercise for 30 minutes : completion 🟢 True
 goal Read a chapter of a book : completion 🔴 False
 
+🟣completion: 50%
+
 do you want to continue(y/n): n
 ```
 
