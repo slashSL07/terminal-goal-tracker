@@ -6,7 +6,8 @@ def add_goals():
   d = {}
   if(os.path.exists(f_name)):
     f = open(f_name, "rb")
-    d = pickle.load(f)
+    if(f):
+      d = pickle.load(f)
     f.close()
   with open(f_name, "wb") as file:
     n = {}
