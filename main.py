@@ -28,8 +28,13 @@ def add_goals():
 def check_goals():
   with open(f_name, "rb") as file:
     obj = pickle.load(file)
+    p = 0
     for k,v in obj.items():
       print(f"\033[35mgoal\033[0m {k} : completion {'\033[92m' if v == True else '\033[31m'}{"completed" if v == 1 else "not completed"}\033[0m \n \n ")
+      if v == 1:
+        p+=1
+    completion = int((p/(len(obj))) * 100)
+    print(f"\033[35mcompletion: {completion}%\033[0m")
 
 def modify_goals():
   d = {}
