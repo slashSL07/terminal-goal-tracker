@@ -3,7 +3,7 @@ f_name = input("filename: ")+".goals"
 def add_goals():
   d = {}
   f = open(f_name, "rb")
-  d = pickle.dump(f)
+  d = pickle.load(f)
   f.close()
   with open(f_name, "wb+") as file:
     n = {}
@@ -30,7 +30,7 @@ def check_goals():
 def modify_goals():
   d = {}
   f = open(f_name, "rb")
-  d = pickle.dump(f)
+  d = pickle.load(f)
   f.close()
   with open(f_name "wb") as file:
     while True:
