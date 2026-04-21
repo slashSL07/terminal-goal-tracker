@@ -29,21 +29,27 @@ def check_goals():
   with open(f_name, "rb") as file:
     obj = pickle.load(file)
     for k,v in obj.items():
-      print(f"\033[35mgoal\033[0m {k} : completion {'\033[92m' if v == True else '\033[31m'}{v}\033[0m \n \n ")
+      print(f"\033[35mgoal\033[0m {k} : completion {'\033[92m' if v == True else '\033[31m'}{"completed" if v == 1 else "not completed"}\033[0m \n \n ")
 
 def modify_goals():
   d = {}
   f = open(f_name, "rb")
   d = pickle.load(f)
+  autosave = d.copy()
   f.close()
   with open(f_name ,"wb") as file:
     while True:
-      feild = input("what feild do you want to modify: ")
-      val = int(input("1/0"))
-      d[feild] = val
-      c = input("do you want to continue(y/n): ")
-      if c == "n":
-        break
+      try:
+        feild = input("what feild do you want to modify: ")
+        val = int(input("1/0"))
+        d[feild] = val
+        c = input("do you want to continue to modify(y/n): ")
+        if c == "n":
+          break
+      except:
+        pickle.dump(autosave, file)
+        return
+        
     pickle.dump(d, file)
 
 while True:
