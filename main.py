@@ -8,7 +8,7 @@ def add_goals():
     f = open(f_name, "rb")
     d = pickle.load(f)
     f.close()
-  with open(f_name, "wb+") as file:
+  with open(f_name, "wb") as file:
     n = {}
     goals = []  
     file.seek(0,2)
