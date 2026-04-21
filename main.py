@@ -1,10 +1,13 @@
 import pickle
+import os
+
 f_name = input("filename: ")+".goals"
 def add_goals():
   d = {}
-  f = open(f_name, "rb")
-  d = pickle.load(f)
-  f.close()
+  if(os.path.exists(f_name)):
+    f = open(f_name, "rb")
+    d = pickle.load(f)
+    f.close()
   with open(f_name, "wb+") as file:
     n = {}
     goals = []  
@@ -38,7 +41,7 @@ def modify_goals():
       val = int(input("1/0"))
       d[feild] = val
       c = input("do you want to continue(y/n): ")
-      if c == n:
+      if c == "n":
         break
     pickle.dump(d, file)
 
