@@ -72,7 +72,7 @@ Goals are stored in pickle files with the `.goals` extension. The file contains 
 
 ## Color Output
 
-- 🟣 **Purple** (`\033[35m`): Goal label
+- 🟣 **Purple** (`\033[35m`): Goal/Goal Completion label
 - 🟢 **Green** (`\033[92m`): Completed goals (True)
 - 🔴 **Red** (`\033[31m`): Incomplete goals (False)
 
