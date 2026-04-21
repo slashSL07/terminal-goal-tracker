@@ -32,7 +32,7 @@ def modify_goals():
   f = open(f_name, "rb")
   d = pickle.load(f)
   f.close()
-  with open(f_name "wb") as file:
+  with open(f_name ,"wb") as file:
     while True:
       feild = input("what feild do you want to modify: ")
       val = int(input("1/0"))
