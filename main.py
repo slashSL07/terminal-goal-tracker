@@ -46,7 +46,7 @@ def modify_goals():
     while True:
       try:
         feild = input("what feild do you want to modify: ")
-        val = int(input("1/0"))
+        val = int(input("1/0: "))
         d[feild] = val
         c = input("do you want to continue to modify(y/n): ")
         if c == "n":
